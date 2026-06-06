@@ -12,9 +12,15 @@ from pathlib import Path
 BASE = Path(__file__).parent
 
 def slugify(title: str) -> str:
-    s = re.sub(r'[^\w\s-]', '', title.lower())
+    import unicodedata
+    s = unicodedata.normalize('NFKD', title)
+    s = s.encode('ascii', 'ignore').decode('ascii')
+    s = re.sub(r'[^\w\s-]', '', s.lower())
     s = re.sub(r'[\s_-]+', '-', s).strip('-')
-    return s[:60] or 'article'
+    if not s:
+        import hashlib
+        s = hashlib.md5(title.encode()).hexdigest()[:12]
+    return s[:60]
 
 def unique_slug(base_slug: str) -> str:
     slug = base_slug
