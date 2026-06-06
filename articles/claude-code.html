@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code構築から得た知見 — スキル設計のベストプラクティス — hiro110's learns</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 hiro110's learns</h1>
+    <span>気になる記事の要約集</span>
+  </header>
+  <main>
+    <p class="breadcrumb"><a href="../index.html">← 一覧に戻る</a></p>
+    <div class="article-header">
+      <h1>Claude Code構築から得た知見 — スキル設計のベストプラクティス</h1>
+      <div class="meta">
+        <span>📅 2026-06-06</span>
+        <span class="source">🔗 <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" target="_blank" rel="noopener">https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills</a></span>
+      </div>
+    </div>
+    <div class="summary">
+      <h2>概要</h2>
+      <p>Anthropicが「Claude Code」を構築する中で得たスキル（Skills）設計の知見をまとめた記事（2026年6月3日公開）。スキルはMarkdownファイルだけでなく、設定・スクリプト・リソースを含むフォルダ構造を持つ強力な仕組みであり、AIエージェントが自律的に発見・活用できる。</p>
+
+      <h2>スキルの9つのカテゴリ</h2>
+      <ul>
+        <li><strong>ライブラリ/APIリファレンス</strong> — エッジケースを含むドキュメント</li>
+        <li><strong>プロダクト検証</strong> — Playwrightなどを使ったテスト手順</li>
+        <li><strong>データ取得・分析</strong> — 監視スタックやデータ基盤への接続</li>
+        <li><strong>ビジネスプロセス自動化</strong> — ワークフロー簡略化ツール</li>
+        <li><strong>コードスキャフォールディング</strong> — フレームワークのボイラープレート</li>
+        <li><strong>コード品質・レビュー</strong> — 品質基準の強制システム</li>
+        <li><strong>CI/CDデプロイ</strong> — ビルドとデプロイの自動化</li>
+        <li><strong>ランブック</strong> — 複数ツールを使った調査ガイド</li>
+        <li><strong>インフラ運用</strong> — 定期メンテナンス手順</li>
+      </ul>
+
+      <h2>効果的なスキル設計のベストプラクティス</h2>
+      <ul>
+        <li><strong>当たり前のことを書かない</strong> — Claudeの思考を正しい方向に向ける情報のみを書く</li>
+        <li><strong>「落とし穴（Gotchas）」セクションを作る</strong> — 実際に遭遇した失敗パターンを蓄積する</li>
+        <li><strong>段階的開示（Progressive Disclosure）</strong> — Claudeが文脈に応じてファイルを読めるようフォルダ構造で整理する</li>
+        <li><strong>柔軟性を持たせる</strong> — 手順を過度に指定せず、情報のみを提供する</li>
+        <li><strong>セットアップフローを含める</strong> — 必要な設定をユーザーにプロンプトで確認する仕組みを入れる</li>
+        <li><strong>モデルのために書く</strong> — スキルの説明文はスキル選択のトリガーになるよう設計する（要約でなく）</li>
+        <li><strong>メモリを有効活用</strong> — 実行ログを保存し、Claudeが過去の実行を記憶できるようにする</li>
+        <li><strong>コードライブラリを提供</strong> — Claudeが組み合わせて使える再利用可能な関数を用意する</li>
+      </ul>
+
+      <h2>配布と計測</h2>
+      <p>スキルはリポジトリへのチェックインやプラグインマーケットプレイスで共有できる。AnthropicはPreToolUseフックを使って使用パターンを追跡し、人気のあるスキルと使われていないスキルを特定している。</p>
+
+      <h2>まとめ</h2>
+      <p>スキルはシンプルな指示と1つの「落とし穴」から始め、実際のエッジケースに基づいて継続的に改善するアプローチが有効。完璧なスキルを最初から作るより、使いながら育てていくことが重要。</p>
+
+    </div>
+  </main>
+</body>
+</html>
