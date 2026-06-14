@@ -36,6 +36,7 @@ def build_article_html(url: str, title: str, date: str, summary_html: str) -> st
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>{title} — hiro110's learns</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
